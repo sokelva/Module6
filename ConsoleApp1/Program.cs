@@ -129,11 +129,28 @@ namespace FirstApp
 		}
 	}
 
+	class Bus
+	{
+		public int? Load = null;
+
+		public void PrintStatus()
+		{
+			if (Load.HasValue && Load > 0)
+            {
+				Console.WriteLine("В автобусе {0} пассажиров", Load.Value);
+            }
+            else
+            {
+				Console.WriteLine("Автобус пуст!");
+			}
+		}
+	}
+
 	//class Rectangle
 	//{
 	//	int a;
 	//	int b;
-		
+
 	//	public Rectangle()
 	//	{
 	//		a = 6;
@@ -157,5 +174,5 @@ namespace FirstApp
 	//		return a * b;
 	//	}
 
-    //}
+	//}
 }
