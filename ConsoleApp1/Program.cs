@@ -95,4 +95,34 @@ namespace FirstApp
 			Console.ReadKey();
 		}
 	}
+
+	class Rectangle
+	{
+		int a;
+		int b;
+		
+		public Rectangle()
+		{
+			a = 6;
+			b = 4;
+		}
+
+		public Rectangle(int side)
+		{
+			a = side;
+			b = side;
+		}
+
+		public Rectangle(int first, int second)
+		{
+			a = first;
+			b = second;
+		}
+
+		static int Square(int a, int b)
+		{
+			return a * b;
+		}
+
+    }
 }
