@@ -60,6 +60,14 @@ namespace FirstApp
 		public string type;
 		public string name;
 		public int age;
+			
+		public Animal(string t, string n, int a)
+        {
+			type = t;
+			name = n;
+			age = a;
+
+		}
 
 		// Метод структуры
 		public void Info()
@@ -80,6 +88,9 @@ namespace FirstApp
 
 			human = new Human("Дмитрий", 23);
 			human.Greetings();
+
+			Animal animal = new Animal { type = "Собака", name = "Вольт", age = 4};
+			animal.Info();
 
 			Console.ReadKey();
 		}
