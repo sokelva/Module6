@@ -2,6 +2,7 @@
 
 namespace FirstApp
 {
+	#region 
 	//class Pen
 	//{
 	//	public string color;
@@ -75,22 +76,23 @@ namespace FirstApp
 	//		Console.WriteLine("Это {0} по кличке {1}, ему {2}", type, name, age);
 	//	}
 	//}
-	class Company
-	{
-		public string Type = "Банк";
-		public string Name = "Абсолют";
-	}
+	//class Company
+	//{
+	//	public string Type = "Банк";
+	//	public string Name = "Абсолют";
+	//}
 
-	class Department
-	{
-		public Company Company;
-		public City City;
-	}
+	//class Department
+	//{
+	//	public Company Company;
+	//	public City City;
+	//}
 
-	class City
-	{
-		public string Name = "Санкт-Петербург";
-	}
+	//class City
+	//{
+	//	public string Name = "Санкт-Петербург";
+	//}
+	#endregion 
 
 	class Program
 	{
@@ -113,38 +115,39 @@ namespace FirstApp
 
 		static void Main(string[] args)
 		{
-			var department = GetCurrentDepartment();
+			//var department = GetCurrentDepartment();
 		}
 
-		static Department GetCurrentDepartment()
-		{
-			// logic
-			Department department = new Department();
+		//static Department GetCurrentDepartment()
+		//{
+		//	// logic
+		//	Department department = new Department();
 
-			if (department?.Company?.Type == "Банк" && department?.City?.Name == "Санкт-Петербург")
-			{
-				Console.WriteLine("У банка {0} есть отделение в Санкт-Петербурге", department?.Company?.Name ?? "Неизвестная компания");
-			}
-			return department;
-		}
+		//	if (department?.Company?.Type == "Банк" && department?.City?.Name == "Санкт-Петербург")
+		//	{
+		//		Console.WriteLine("У банка {0} есть отделение в Санкт-Петербурге", department?.Company?.Name ?? "Неизвестная компания");
+		//	}
+		//	return department;
+		//}
 	}
 
-	class Bus
-	{
-		public int? Load = null;
+	#region
+	//class Bus
+	//{
+	//	public int? Load = null;
 
-		public void PrintStatus()
-		{
-			if (Load.HasValue && Load > 0)
-            {
-				Console.WriteLine("В автобусе {0} пассажиров", Load.Value);
-            }
-            else
-            {
-				Console.WriteLine("Автобус пуст!");
-			}
-		}
-	}
+	//	public void PrintStatus()
+	//	{
+	//		if (Load.HasValue && Load > 0)
+	//           {
+	//			Console.WriteLine("В автобусе {0} пассажиров", Load.Value);
+	//           }
+	//           else
+	//           {
+	//			Console.WriteLine("Автобус пуст!");
+	//		}
+	//	}
+	//}
 
 	//class Rectangle
 	//{
@@ -175,4 +178,79 @@ namespace FirstApp
 	//	}
 
 	//}
+	#endregion
+
+	//   class Car
+	//{
+	//	public double Fuel;
+
+	//	public int Mileage;
+
+	//	public Car()
+	//	{
+	//		Fuel = 50;
+	//		Mileage = 0;
+	//	}
+
+	//	public void Move()
+	//	{
+	//		// Move a kilometer
+	//		Mileage++;
+	//		Fuel -= 0.5;
+	//	}
+
+	//	public void FillTheCar()
+	//	{
+	//		Fuel = 50;
+	//	}
+	//}
+
+	class Circle
+	{
+		public double radius;
+
+		public double Square()
+		{
+			return radius;
+		}
+
+		public double Length()
+		{
+			return radius;
+		}
+	}
+
+	class Triangle
+	{
+		public int a;
+		public int b;
+		public int c;
+
+		public double Square()
+		{
+			return a;
+		}
+
+		public double Perimeter()
+		{
+			return a;
+		}
+	}
+
+	class Square
+	{
+		public int side;
+
+		public double Square_s()
+		{
+			double s=0;
+			return s;
+		}
+
+		public double Perimeter()
+		{
+			double p = 0;
+			return p;
+		}
+	}
 }
