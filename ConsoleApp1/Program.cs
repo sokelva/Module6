@@ -115,8 +115,39 @@ namespace FirstApp
 
 		static void Main(string[] args)
 		{
-			//var department = GetCurrentDepartment();
+			 
+			var (pet, age) = ("Вольт", 12);
+
+			int[,] array0 = { { 1, 2, 3 }, { 5, 6, 7 } };
+			Console.WriteLine(array0.Length);
+
+			int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
+
+			foreach (var ch in array)
+			{
+				Console.WriteLine(array.GetUpperBound(1));
+			}
+
+
+			Console.WriteLine("Введите своё имя");
+
+			var name = Console.ReadLine();
+			Console.WriteLine("Ваше имя по буквам: ");
+
+			foreach (var ch in name)
+			{
+				Console.Write(ch + " "); // <-- Не переносим на след строку 
+			}
+
+			Console.WriteLine("\nПоследняя буква вашего имени: {0}", name[name.Length - 1]);
+			Console.WriteLine("\nПоследняя буква вашего имени: {0}", name.Length);
+
+
+			Console.ReadKey();
+
 		}
+	}
+
 
 		//static Department GetCurrentDepartment()
 		//{
@@ -205,52 +236,137 @@ namespace FirstApp
 	//	}
 	//}
 
-	class Circle
+	enum TurnDirection
 	{
-		public double radius;
+		None = 0,
+		Left,
+		Right
+	}
 
-		public double Square()
+	class Car
+	{
+		private double Fuel;
+
+		private int Mileage;
+
+		private string color;
+
+		private TurnDirection turn;
+
+		public Car()
 		{
-			return radius;
+			Fuel = 50;
+			Mileage = 0;
+			color = "White";
 		}
 
-		public double Length()
+		private void Move()
 		{
-			return radius;
+			// Move a kilometer
+			Mileage++;
+			Fuel -= 0.5;
+		}
+
+		private void Turn(TurnDirection direction)
+		{
+			turn = direction;
+		}
+
+		public void FillTheCar()
+		{
+			Fuel = 50;
+		}
+
+		public string GetColor()
+		{
+			return color;
+		}
+
+		public void ChangeColor(string newColor)
+		{
+			if (color != newColor)
+				color = newColor;
+		}
+
+		public bool IsTurningLeft()
+		{
+			return turn == TurnDirection.Left;
+		}
+
+		public bool IsTurningRight()
+		{
+			return turn == TurnDirection.Right;
 		}
 	}
 
-	class Triangle
+	class User
 	{
-		public int a;
-		public int b;
-		public int c;
-
-		public double Square()
+		private int age;
+		public int Age
 		{
-			return a;
+			get
+			{
+				return age;
+			}
+
+			set
+			{
+				if (value < 18)
+				{
+					Console.WriteLine("Возраст должен быть не меньше 18");
+				}
+				else
+				{
+					age = value;
+				}
+			}
 		}
 
-		public double Perimeter()
-		{
-			return a;
-		}
-	}
 
-	class Square
-	{
-		public int side;
-
-		public double Square_s()
+		private string login;
+		public string Login
 		{
-			double s=0;
-			return s;
+			get
+			{
+				return login;
+			}
+
+			set
+			{
+				if (value.Length < 3)
+				{
+					Console.WriteLine("Логин должен быть длиной от 3 символов");
+				}
+				else
+				{
+					login = value;
+				}
+			}
 		}
 
-		public double Perimeter()
+		
+
+
+		private string email;
+		public string Email
 		{
-			double p = 0;
-			return p;
+			get
+			{
+				return email;
+			}
+
+			set
+			{
+				if (!value.Contains("@"))
+				{
+					Console.WriteLine("Неверный формат адреса электронной почты");
+				}
+				else
+				{
+					email = value;
+				}
+			}
+
+	
 		}
-	}
 }
