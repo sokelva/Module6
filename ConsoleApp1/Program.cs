@@ -113,9 +113,28 @@ namespace FirstApp
 		//Console.ReadKey();
 		//}
 
-		static void Main(string[] args)
+		enum Cnt
 		{
-			 
+			one,
+			two,
+			three,
+			four
+		}
+
+		
+		public  void TestRefParams() 
+        {
+         
+			Console.WriteLine("Считаем: ", Cnt.two);
+			Console.ReadKey();
+        }
+
+		public void Main(string[] args)
+		{
+
+
+			TestRefParams();
+
 			var (pet, age) = ("Вольт", 12);
 
 			int[,] array0 = { { 1, 2, 3 }, { 5, 6, 7 } };
